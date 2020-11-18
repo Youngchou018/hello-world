@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	const int max = 5;
+	double fish[max];
+	cout << "enter the weight of the fish\n";
+	cout << "fish #1:";
+	int i = 0;
+	while ( i < max && cin >> fish[i])
+	{
+		if (++i<max)
+		{
+			cout << "fish #" << i + 1 << ":";
+		}
+	}
+	double total = 0.0;
+	for (int j = 0; j < i; j++)
+	{
+		total += fish[j];
+	}
+	cout << total / i << "=average weight of " << i << "fish\n";
+
+	return 0;
+}
