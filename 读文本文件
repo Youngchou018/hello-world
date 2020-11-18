@@ -1,0 +1,31 @@
+#include<iostream>
+#include<fstream>
+#include<cstdlib>
+const int SIZE = 60;
+
+int main() {
+	using namespace std;
+	char filename[SIZE];
+	ifstream inFile;
+	cout << "enter the name of the file: ";
+	cin.getline(filename, SIZE);
+	inFile.open(filename);
+	if (!inFile.is_open())
+	{
+		cout << "couldn't open the file" << filename << endl;
+		cout << "terminated" << endl;
+		exit(EXIT_FAILURE);
+	}
+	double value;
+	double sum = 0.0;
+	int count = 0;
+
+	while (inFile >> value)
+	{
+		count++;
+		sum += value;
+	}
+	cout << count << "sum:" << sum << endl;
+	cout << sum / count << endl;
+	return 0;
+}
