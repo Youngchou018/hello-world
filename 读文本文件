@@ -5,7 +5,7 @@ const int SIZE = 60;
 
 int main() {
 	using namespace std;
-	char filename(SIZE);
+	char filename[SIZE];
 	ifstream inFile;
 	cout << "enter the name of the file: ";
 	cin.getline(filename, SIZE);
